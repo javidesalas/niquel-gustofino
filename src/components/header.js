@@ -1,42 +1,40 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+/** @jsx jsx */
+
 import React from "react"
+//import { Link } from "gatsby"
+//import PropTypes from "prop-types"
+import { jsx, css } from '@emotion/core'
+import styled from '@emotion/styled'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+import { colors } from "./theme"
+import LogoNiquel from '../images/logoNiquel.svg'
+
+
+const Logo = styled.img`
+      width: 120px;
+      margin-top: 1rem;
+      grid-column: 2;
+
+`;
+
+
+const Header = () => {
+  
+  return (
+    <header
+      css={css`
+        background-color: ${colors.black};
+        padding: 0 1rem;
+        display: grid;
+        grid-template-columns: 100px auto 100px;
+        justify-items: center;
+        `}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+      <Logo src={LogoNiquel} />
+    </header>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+
 
 export default Header
