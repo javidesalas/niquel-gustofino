@@ -8,6 +8,8 @@ import Header from "./header"
 import "./layout.css"
 
 const Layout = props => {
+  const {lang, menuItems} = props
+
   return (
     <>
       <Global
@@ -48,6 +50,10 @@ const Layout = props => {
             max-width: 1400px;
             
           }
+
+          img {
+            max-width: 100%
+          }
         `}
       />
 
@@ -59,7 +65,7 @@ const Layout = props => {
        
       </Helmet>
 
-      <Header />
+      <Header lang={lang} menuItems={menuItems}/>
 
       <main>{props.children}</main>
 

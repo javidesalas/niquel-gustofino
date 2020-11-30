@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet'
+import MapContainer from './MapContainer'
 
 
 const Contacto = ({ titleContacto, telefono, horario, picHeaderSet }) => {
@@ -56,8 +57,8 @@ const Contacto = ({ titleContacto, telefono, horario, picHeaderSet }) => {
 
       <section>
         <h2>{titleContacto}</h2>
-        <div style={{ width:"90%", height:"300px"}}>
-
+        <div style={{ width:"100px", minHeight:"300px", overflow: "hidden"}}>
+          <MapContainer />
         </div>
 
         <p>

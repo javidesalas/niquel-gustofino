@@ -6,13 +6,22 @@ import SEO from "../components/seo"
 import Homepage from "../components/homepage"
 
 const IndexPage = () => {
-  const content = useContent("ES")
+    const content = useContent("ES")
+    
+    const menuItems = [
+        content.titleContacto,
+        content.titleAbout,
+        content.subtComer,
+        content.subtBeber,
+        content.subtCelebrar,
+        content.titleGaleria,
+    ]
 
   console.log("En Index", content)
 
   return (
-    <Layout>
-      <SEO />
+    <Layout menuItems={menuItems} lang="ES">
+      <SEO title="Niquel" />
       <Homepage content={content} />
     </Layout>
   )
