@@ -8,8 +8,8 @@ import styled from "@emotion/styled"
 
 import { colors } from './theme'
 import LogoNiquel from '../images/logoNiquel.svg'
-import BurgerMenu from './menu'
-//import { MenuContext } from "../context/MenuContext"
+import Menu from './menu'
+
 
 const Logo = styled.img`
   width: 120px;
@@ -17,23 +17,23 @@ const Logo = styled.img`
   grid-column: 2;
 `
 
-const Header = ({ lang, menuItems }) => {
+const Header = () => {
  
   return (
     <>
-        <BurgerMenu lang={lang} menuItems={menuItems} disableAutoFocus />
-          
-        <header
-          css={css`
-            background-color: ${colors.black};
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 100px auto 100px;
-            justify-items: center;
-          `}
-        >
-          <Logo src={LogoNiquel} />
-        </header>
+      <Menu disableAutoFocus /> 
+        
+      <header
+        css={css`
+          background-color: ${colors.black};
+          padding: 0 1rem;
+          display: grid;
+          grid-template-columns: 100px auto 100px;
+          justify-items: center;
+        `}
+      >
+        <Logo src={LogoNiquel} />
+      </header>
     </>
   )
 }

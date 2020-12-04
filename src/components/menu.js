@@ -30,41 +30,62 @@ const hoverStyles = css`
 
 
 class Burger extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      menuOpen: false,
+    }
+  }
+
+  handleStateChange(state) {
+    this.setState({ menuOpen: state.isOpen })
+  }
+
+  closeMenu() {
+    this.setState({ menuOpen: false })
+  }
+
   handleLink = e => {
     e.preventDefault()
     console.dir(e.currentTarget)
-    document.getElementById(e.currentTarget.name).scrollIntoView({ behavior: "smooth" })
+    document
+      .getElementById(e.currentTarget.name)
+      .scrollIntoView({ behavior: "smooth" })
+    this.closeMenu()
   }
 
-    render() {
-      const { menuItems,lang } = this.props 
+  render() {
+    const lang = JSON.parse(sessionStorage.getItem("lang"))
+    const menuItems = JSON.parse(sessionStorage.getItem("menuItems"))
 
     return (
-        <Menu styles={styles}>
-            <Logo src={LogoNiquel} style={{ margin: "-20 auto 0 auto" }} />
-     
+      <Menu
+        isOpen={this.state.menuOpen}
+        onStateChange={state => this.handleStateChange(state)}
+        styles={styles}
+      >
+        <Logo src={LogoNiquel} style={{ margin: "-20 auto 0 auto" }} />
 
-            {menuItems.map(item => (
-              <a
-                name={menuId(item)}
-                css={hoverStyles}
-                onClick={this.handleLink}
-              >
-                {" "}
-                {lang === "ES" ? menuId(item, 2) : menuId(item, 3)}{" "}
-              </a>
-            ))}
-            
+        {menuItems.map(item => (
+          <a
+            // href={menuId(item)}
+            name={menuId(item)}
+            css={hoverStyles}
+            onClick={this.handleLink}
+          >
+            {" "}
+            {lang === "ES" ? menuId(item, 2) : menuId(item, 3)}{" "}
+          </a>
+        ))}
 
-
-            <Link to="/" style={{ color: colors.grey }}>
-              Español
-            </Link>
-            <Link to="/en/" style={{ color: colors.grey }}>
-              English
-            </Link>
-          </Menu>
-      )
+        <Link to="/" style={{ color: colors.grey }} >
+          Español
+        </Link>
+        <Link to="/en/" style={{ color: colors.grey }}>
+          English
+        </Link>
+      </Menu>
+    )
   }
 }
 
