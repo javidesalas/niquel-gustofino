@@ -19,15 +19,15 @@ const useContent = (lang) => {
             picAbout {
               fluid(maxWidth: 1200) {
                 ...GatsbyDatoCmsFluid
-              }            
+              }
             }
             titleAboutEs
             titleAboutEn
             aboutEs
             aboutEn
             picComer {
-              fixed(width: 600) {
-                ...GatsbyDatoCmsFixed
+              fluid(maxWidth: 400) {
+                ...GatsbyDatoCmsFluid
               }
             }
             subtComerEs
@@ -43,8 +43,8 @@ const useContent = (lang) => {
             linktextComerEs
             linktextComerEn
             picBeber {
-              fixed(width: 600) {
-                ...GatsbyDatoCmsFixed
+              fluid(maxWidth: 400) {
+                ...GatsbyDatoCmsFluid
               }
             }
             subtBeberEs
@@ -60,8 +60,8 @@ const useContent = (lang) => {
             linktextBeberEs
             linktextBeberEn
             picCelebrar {
-              fixed(width: 600) {
-                ...GatsbyDatoCmsFixed
+              fluid(maxWidth: 400) {
+                ...GatsbyDatoCmsFluid
               }
             }
             subtCelebrarEs

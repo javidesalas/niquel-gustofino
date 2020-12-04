@@ -2,8 +2,10 @@ import React from "react"
 
 import Layout from "../components/layout"
 import useContent from "../hooks/use-content"
+
 import SEO from "../components/seo"
 import Homepage from "../components/homepage"
+
 
 const IndexPage = () => {
     const content = useContent("ES")
@@ -20,10 +22,12 @@ const IndexPage = () => {
   console.log("En Index", content)
 
   return (
-    <Layout menuItems={menuItems} lang="ES">
-      <SEO title="Niquel" />
-      <Homepage content={content} />
-    </Layout>
+
+      <Layout lang="ES" menuItems={menuItems}>
+        <SEO title="Niquel" />
+        <Homepage content={content} />
+      </Layout>
+
   )
 }
 

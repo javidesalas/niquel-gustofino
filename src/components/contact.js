@@ -1,13 +1,34 @@
-import React from 'react';
-import Helmet from 'react-helmet'
-import MapContainer from './MapContainer'
+import React from "react"
+import Helmet from "react-helmet"
+import styled from "@emotion/styled"
 
+import MapContainer from "./MapContainer"
+import { menuId } from "../helpers/menuId"
 
-const Contacto = ({ titleContacto, telefono, horario, picHeaderSet }) => {
+const Section = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  
+`
+const MapDiv = styled.div`
+  width: 80%;
+  max-width: 600px;
+  min-height: 300px;
+  position: relative;
+  margin: 1rem 0;
+`
 
-    console.log(picHeaderSet)
-    
-    const structuredData = `{
+const CenteredP = styled.p`
+  text-align: center
+`
+
+const Contacto = ({ title, telefono, horario, picHeaderSet }) => {
+  console.log(picHeaderSet)
+
+  const structuredData = `{
       "@context": "https://schema.org",
       "@type": "Restaurant",
       image: [
@@ -29,7 +50,7 @@ const Contacto = ({ titleContacto, telefono, horario, picHeaderSet }) => {
         longitude: -3.6774188950123596,
       },
       url: "http://niquelgustofino.com",
-      telephone: "+34605806003",
+      telephone: "+34659055423",
       servesCuisine: "Tapas",
       priceRange: "$$",
       openingHoursSpecification: [
@@ -55,23 +76,29 @@ const Contacto = ({ titleContacto, telefono, horario, picHeaderSet }) => {
         <script type="application/ld+json">{structuredData}</script>
       </Helmet>
 
-      <section>
-        <h2>{titleContacto}</h2>
-        <div style={{ width:"100px", minHeight:"300px", overflow: "hidden"}}>
-          <MapContainer />
-        </div>
+      <Section id={menuId(title)}>
+        <h2>{title}</h2>
+        <MapDiv>
+          <MapContainer
+            storeName="Niquel"
+            location={[-3.6774188950123596, 40.418015988501196]}
+            style={{ height: "100%", width: "100%" }}
+          />
+        </MapDiv>
 
-        <p>
+        <CenteredP>
           c/ Ibiza 8, puesto 27 <br />
           Area Gastronómica del Mercado de Ibiza <br />
           28009, Madrid <br />
           <a href={telefono}>{telefono}</a> <br />
-          <a href="mailto:hola@niquelgustofino.com">hola@niquelgustofino.com</a>
-        </p>
+          <a href="mailto:contacto@niquelgustofino.com">
+            contacto@niquelgustofino.com
+          </a>
+        </CenteredP>
 
         <h4>Horario</h4>
-        <p>{horario}</p>
-      </section>
+        <CenteredP>{horario}</CenteredP>
+      </Section>
     </>
   )
 }

@@ -24,13 +24,13 @@ export const styles = {
     background: colors.red,
   },
   bmMenuWrap: {
-    position: "absolute",
+    position: "fixed",
     height: "100%",
   },
   bmMenu: {
     background: colors.black,
     padding: "2.5em 1.5em 0",
-    fontSize: "1.15em",
+    fontSize: "1em",
   },
   bmMorphShape: {
     fill: "#373a47",
@@ -38,11 +38,22 @@ export const styles = {
   bmItemList: {
     color: "white",
     padding: "0.8em",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
   },
   bmItem: {
-    display: "inline-block",
+    textDecoration: "none",
+    fontFamily: "'Montserrat', sans-serif",
+    fontWeight: 800,
+    textTransform: "uppercase",
+    marginTop: 10,
+          
   },
+
+
+
   bmOverlay: {
-    background: "rgba(0, 0, 0, 0.3)",
+    background: "rgba(0, 0, 0, 0)",
   },
 }

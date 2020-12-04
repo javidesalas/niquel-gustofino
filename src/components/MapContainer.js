@@ -26,11 +26,11 @@ export class MapContainer extends Component {
 
     setStoreLocation = () =>{
     
-        // this.setState({storeName : this.props.storeName,
-        //                 center: {
-        //                     lat: this.props.location[1],
-        //                     lng: this.props.location[0]
-        //                 }})
+        this.setState({storeName : this.props.storeName,
+                        center: {
+                            lat: this.props.location[1],
+                            lng: this.props.location[0]
+                        }})
     } 
 
  
@@ -39,9 +39,9 @@ export class MapContainer extends Component {
   render() {
 
     const style = {
-        width: "50%",
-        height: "200px"
-      }
+      width: this.props.style.width,
+      height: this.props.style.height,
+    }
    
 
     
@@ -56,8 +56,8 @@ export class MapContainer extends Component {
             lng: -88.081807,
           }}
           center={{
-            lat: 40.854885,
-            lng: 40.854885,
+            lat: this.state.center.lat,
+            lng: this.state.center.lng,
           }}
           zoom={15}
           onClick={this.onMapClicked}
