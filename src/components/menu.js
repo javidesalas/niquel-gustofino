@@ -24,6 +24,7 @@ const hoverStyles = css`
   .bm-item:hover,
   .bm-item:active {
     color: ${colors.red};
+    cursor: pointer
   }
 `
 
@@ -55,8 +56,14 @@ class Burger extends React.Component {
   }
 
   render() {
-    const lang = JSON.parse(sessionStorage.getItem("lang"))
-    const menuItems = JSON.parse(sessionStorage.getItem("menuItems"))
+    const lang =
+      typeof window !== `undefined`
+        ? JSON.parse(sessionStorage.getItem("lang"))
+        : "ES"
+    const menuItems =
+      typeof window !== `undefined`
+        ? JSON.parse(sessionStorage.getItem("menuItems"))
+        : []
 
     return (
       <Menu
@@ -78,10 +85,20 @@ class Burger extends React.Component {
           </a>
         ))}
 
-        <Link to="/" style={{ color: colors.grey }} >
+        <Link
+          to="/"
+          style={{ color: colors.grey }}
+          css={hoverStyles}
+          onClick={() => this.closeMenu()}
+        >
           Español
         </Link>
-        <Link to="/en/" style={{ color: colors.grey }}>
+        <Link
+          to="/en/"
+          css={hoverStyles}
+          style={{ color: colors.grey }}
+          onClick={() => this.closeMenu()}
+        >
           English
         </Link>
       </Menu>

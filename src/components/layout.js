@@ -10,9 +10,9 @@ import "./layout.css"
 const MenuContext = React.createContext(null)
 
 const Layout = props => {
-  const {lang, menuItems} = props
-  sessionStorage.setItem("lang", JSON.stringify(lang))
-  sessionStorage.setItem('menuItems', JSON.stringify(menuItems))
+  const { lang, menuItems } = props;
+  typeof window !== `undefined` && sessionStorage.setItem("lang", JSON.stringify(lang))
+  typeof window !== `undefined` &&sessionStorage.setItem("menuItems", JSON.stringify(menuItems))
 
   return (
     <>
