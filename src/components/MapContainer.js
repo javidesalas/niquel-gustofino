@@ -8,9 +8,6 @@ export class MapContainer extends Component {
         this.state = {
             storeName : "",
             center : {},
-            
- 
-
 
         }
       
@@ -42,9 +39,6 @@ export class MapContainer extends Component {
       width: this.props.style.width,
       height: this.props.style.height,
     }
-   
-
-    
 
     return (
       <>

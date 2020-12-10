@@ -26,8 +26,7 @@ const CenteredP = styled.p`
 `
 
 const Contacto = ({ title, telefono, horario, picHeaderSet }) => {
-  console.log(picHeaderSet)
-
+  
   const structuredData = `{
       "@context": "https://schema.org",
       "@type": "Restaurant",

@@ -73,34 +73,46 @@ class Burger extends React.Component {
       >
         <Logo src={LogoNiquel} style={{ margin: "-20 auto 0 auto" }} />
 
-        {menuItems.map(item => (
-          <a
-            // href={menuId(item)}
-            name={menuId(item)}
-            css={hoverStyles}
-            onClick={this.handleLink}
-          >
-            {" "}
-            {lang === "ES" ? menuId(item, 2) : menuId(item, 3)}{" "}
-          </a>
-        ))}
+        <ul style={{textAlign:"center"}}>
+          {menuItems.map(item => (
+            <li>
+              <a
+                href={`#${menuId(item)}`}
+                key={menuId(item)}
+                name={menuId(item)}
+                css={hoverStyles}
+                onClick={this.handleLink}
+              >
+                {" "}
+                {lang === "ES" ? menuId(item, 2) : menuId(item, 3)}{" "}
+              </a>
+            </li>
+          ))}
 
-        <Link
-          to="/"
-          style={{ color: colors.grey }}
-          css={hoverStyles}
-          onClick={() => this.closeMenu()}
-        >
-          Español
-        </Link>
-        <Link
-          to="/en/"
-          css={hoverStyles}
-          style={{ color: colors.grey }}
-          onClick={() => this.closeMenu()}
-        >
-          English
-        </Link>
+          <li>
+            {lang === "ES" ? (
+              <Link
+                to="/en/"
+                key={lang}
+                css={hoverStyles}
+                style={{ color: colors.grey }}
+                onClick={() => this.closeMenu()}
+              >
+                English
+              </Link>
+            ) : (
+              <Link
+                to="/"
+                key={lang}
+                style={{ color: colors.grey }}
+                css={hoverStyles}
+                onClick={() => this.closeMenu()}
+              >
+                Español
+              </Link>
+            )}
+          </li>
+        </ul>
       </Menu>
     )
   }

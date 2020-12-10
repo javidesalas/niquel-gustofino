@@ -81,8 +81,7 @@ const useContent = (lang) => {
         }
       }
     `)
-    console.log(data.allDatoCmsHome.nodes[0])
-    
+        
     const allContent = data.allDatoCmsHome.nodes[0]
     let content = {
       picHeader: allContent.picHeader,

@@ -59,7 +59,7 @@ const Layout = props => {
               font-weight: 700;
             }
             main {
-              max-width: 1400px;
+              max-width: 1200px;
             }
 
             img {

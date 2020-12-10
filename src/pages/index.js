@@ -19,9 +19,7 @@ const IndexPage = () => {
         content.titleGaleria,
     ]
 
-  console.log("En Index", content)
-
-  return (
+    return (
 
       <Layout lang="ES" menuItems={menuItems}>
         <SEO title="Niquel" />
