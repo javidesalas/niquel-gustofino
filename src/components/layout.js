@@ -92,10 +92,6 @@ const Layout = props => {
             color: ${colors.grey};
           }
 
-          /* a.langMenu:hover,
-          a.langMenu:active {
-            color: ${colors.red};
-          } */
         `}
       />
 
