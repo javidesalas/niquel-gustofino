@@ -21,10 +21,16 @@ const Logo = styled.img`
 `;
 
 const hoverStyles = css`
-  .bm-item:hover,
+  .bm-item:hover {
+    color: ${colors.red};
+    cursor: pointer;
+  };
   .bm-item:active {
     color: ${colors.red};
-    cursor: pointer
+    cursor: pointer;
+  };
+  .bm-item::last-of-type {
+    color: ${colors.red};
   }
 `
 
@@ -73,46 +79,52 @@ class Burger extends React.Component {
       >
         <Logo src={LogoNiquel} style={{ margin: "-20 auto 0 auto" }} />
 
-        <ul style={{textAlign:"center"}}>
-          {menuItems.map(item => (
-            <li>
-              <a
-                href={`#${menuId(item)}`}
-                key={menuId(item)}
-                name={menuId(item)}
-                css={hoverStyles}
-                onClick={this.handleLink}
-              >
-                {" "}
-                {lang === "ES" ? menuId(item, 2) : menuId(item, 3)}{" "}
-              </a>
-            </li>
-          ))}
+        {menuItems.map(item => (
+          <a
+            href={`#${menuId(item)}`}
+            key={menuId(item)}
+            name={menuId(item)}
+            css={css`
+              .bm-item:hover {
+                color: ${colors.red};
+                cursor: pointer;
+              }
+              .bm-item:active {
+                color: ${colors.red};
+                cursor: pointer;
+              }
+              .bm-item::last-of-type {
+                color: ${colors.red};
+              }
+            `}
+            onClick={this.handleLink}
+          >
+            {" "}
+            {lang === "ES" ? menuId(item, 2) : menuId(item, 3)}{" "}
+          </a>
+        ))}
 
-          <li>
-            {lang === "ES" ? (
-              <Link
-                to="/en/"
-                key={lang}
-                css={hoverStyles}
-                style={{ color: colors.grey }}
-                onClick={() => this.closeMenu()}
-              >
-                English
-              </Link>
-            ) : (
-              <Link
-                to="/"
-                key={lang}
-                style={{ color: colors.grey }}
-                css={hoverStyles}
-                onClick={() => this.closeMenu()}
-              >
-                Español
-              </Link>
-            )}
-          </li>
-        </ul>
+        {lang === "ES" ? (
+          <Link
+            to="/en/"
+            key={lang}
+            css={hoverStyles}
+            className={"langMenu"}
+            onClick={() => this.closeMenu()}
+          >
+            English
+          </Link>
+        ) : (
+          <Link
+            to="/"
+            key={lang}
+            className={"langMenu"}
+            css={hoverStyles}
+            onClick={() => this.closeMenu()}
+          >
+            Español
+          </Link>
+        )}
       </Menu>
     )
   }
