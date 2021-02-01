@@ -16,6 +16,7 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   padding: 1rem;
+    
 `
 
 
@@ -48,7 +49,7 @@ function homepage(props) {
   } = props.content
 
   return (
-    <div>
+    <main>
       <Image
         fluid={picHeader.fluid}
         css={css`
@@ -90,7 +91,7 @@ function homepage(props) {
       </Section>
 
       <Gallery title={titleGaleria} gallery={galeria} />
-    </div>
+    </main>
   )
 }
 

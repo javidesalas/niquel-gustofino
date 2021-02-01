@@ -5,6 +5,7 @@ import Image from 'gatsby-image'
 import {jsx, css} from '@emotion/core'
 
 import { menuId } from '../helpers/menuId';
+import Fader from './FadeInComponent'
 
 const wideSection = ({picture, title, text}) => {
     return (
@@ -19,9 +20,13 @@ const wideSection = ({picture, title, text}) => {
         <div
           css={css`
             padding: 0 1rem;
+            max-width: 900px;
+            margin: 0 auto;
           `}
         >
-          <h1>{title}</h1>
+          <Fader direction="fadeInLeft">
+            <h1>{title}</h1>
+          </Fader>
           <p>{text}</p>
         </div>
       </section>

@@ -12,7 +12,22 @@ const Layout = props => {
   //simpler alternative to Context Api due to Gatsby compatibility issues
   const { lang, menuItems } = props;
   typeof window !== `undefined` && sessionStorage.setItem("lang", JSON.stringify(lang))
-  typeof window !== `undefined` &&sessionStorage.setItem("menuItems", JSON.stringify(menuItems))
+  typeof window !== `undefined` && sessionStorage.setItem("menuItems", JSON.stringify(menuItems))
+
+    const isInViewport = el => {
+      const rect = el.getBoundingClientRect()
+      const vertInView =
+        rect.top <= window.innerHeight && rect.top + rect.height >= 0
+      const horInView =
+        rect.left <= window.innerWidth && rect.left + rect.width >= 0
+      return vertInView && horInView
+    }
+
+  document.querySelectorAll(".reveal").forEach(elm => {
+    isInViewport(elm)
+      ? elm.classList.add("visible")
+      : elm.classList.remove("visible")
+  })
 
   return (
     <>
@@ -36,6 +51,11 @@ const Layout = props => {
             -moz-font-smoothing: antialiased;
             -o-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+          }
+
+          main {
+            margin: 0 auto;
+            background-color: white;
           }
 
           a,
@@ -74,9 +94,6 @@ const Layout = props => {
             padding: 0;
             font-weight: 700;
           }
-          main {
-            max-width: 1200px;
-          }
 
           img {
             max-width: 100%;
@@ -92,6 +109,48 @@ const Layout = props => {
             color: ${colors.grey};
           }
 
+          /*Reveal effects*/
+
+          .reveal {
+            opacity: 0;
+            transition: opacity 0.8s ease-out, transform 1.4s ease-out;
+          }
+
+          .reveal.fadeInUp {
+            transform: translateY(-20);
+
+          }
+
+          .reveal.fadeInUp.visible {
+            transform: translateY(0);
+            opacity: 1;
+          }
+
+          .reveal.fadeInRight {
+           transform: translateX(60px);
+          }
+
+          .reveal.fadeInRight.visible {
+            transform: translateX(0);
+            opacity: 1;
+          }
+
+          .reveal.fadeInLeft {
+           transform: translateX(-60px);
+          }
+
+          .reveal.fadeInLeft.visible {
+            transform: translateX(0);
+            opacity: 1;
+          }
+
+          .reveal.fadeIn {
+  
+          }
+
+          .reveal.fadeIn.visible {
+            opacity: 1;
+          }
         `}
       />
 

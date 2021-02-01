@@ -20,22 +20,6 @@ const Logo = styled.img`
   margin: -20 auto 0 auto !important
 `;
 
-const hoverStyles = css`
-  .bm-item:hover {
-    color: ${colors.red};
-    cursor: pointer;
-  };
-  .bm-item:active {
-    color: ${colors.red};
-    cursor: pointer;
-  };
-  .bm-item::last-of-type {
-    color: ${colors.red};
-  }
-`
-
-
-
 class Burger extends React.Component {
   constructor(props) {
     super(props)
@@ -62,6 +46,7 @@ class Burger extends React.Component {
   }
 
   render() {
+    //Simpler alterantive to context API due to Gatsby implementation issues
     const lang =
       typeof window !== `undefined`
         ? JSON.parse(sessionStorage.getItem("lang"))
@@ -76,6 +61,7 @@ class Burger extends React.Component {
         isOpen={this.state.menuOpen}
         onStateChange={state => this.handleStateChange(state)}
         styles={styles}
+        disableAutoFocus
       >
         <Logo src={LogoNiquel} style={{ margin: "-20 auto 0 auto" }} />
 
@@ -84,19 +70,6 @@ class Burger extends React.Component {
             href={`#${menuId(item)}`}
             key={menuId(item)}
             name={menuId(item)}
-            css={css`
-              .bm-item:hover {
-                color: ${colors.red};
-                cursor: pointer;
-              }
-              .bm-item:active {
-                color: ${colors.red};
-                cursor: pointer;
-              }
-              .bm-item::last-of-type {
-                color: ${colors.red};
-              }
-            `}
             onClick={this.handleLink}
           >
             {" "}
@@ -108,8 +81,6 @@ class Burger extends React.Component {
           <Link
             to="/en/"
             key={lang}
-            css={hoverStyles}
-            className={"langMenu"}
             onClick={() => this.closeMenu()}
           >
             English
@@ -118,8 +89,6 @@ class Burger extends React.Component {
           <Link
             to="/"
             key={lang}
-            className={"langMenu"}
-            css={hoverStyles}
             onClick={() => this.closeMenu()}
           >
             Español

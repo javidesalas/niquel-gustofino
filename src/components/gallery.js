@@ -1,13 +1,26 @@
+/** @jsx jsx */
 import React from "react"
-import EmblaCarousel from "./emblaCarousel/emblaCarousel"
-import {menuId} from '../helpers/menuId'
+import { jsx, css } from "@emotion/core"
 
+import EmblaCarousel from "./emblaCarousel/emblaCarousel"
+import { menuId } from "../helpers/menuId"
+import Fader from "./FadeInComponent"
 
 const Gallery = ({ title, gallery }) => {
   return (
     <section id={menuId(title)}>
-      <h2 style={{ paddingLeft: "1rem" }}>{title}</h2>
-      <EmblaCarousel gallery={gallery} />
+      <div
+        css={css`
+          padding: 0 1rem;
+          max-width: 900px;
+          margin: 0 auto;
+        `}
+      >
+        <Fader direction="fadeInRight">
+          <h2>{title}</h2>
+        </Fader>
+        <EmblaCarousel gallery={gallery} />
+      </div>
     </section>
   )
 }

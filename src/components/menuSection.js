@@ -3,36 +3,57 @@
 import React from "react"
 import Image from "gatsby-image"
 import { jsx, css } from "@emotion/core"
+import styled from "@emotion/styled"
 
 import { menuId } from "../helpers/menuId"
+import Fader from "./FadeInComponent"
 
+const MenuArticle = styled.article`
+  max-width: 400px;
+  @media (min-width: 992px) {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+   
 
+    .gatsby-image-wrapper {
+      width: 400px;
+      height: 300px;
+    }
+    .menu-text {
+      width: 400px;
+      height: 300px;
+      margin: 1rem 1rem 0 2rem
+      
+    }
+  }
+`
 
 const menuSection = ({ picture, title, text, linkText, linkUrl }) => {
   return (
-    <article
-      css={css`
-        max-width: 400px;
-      `}
-      id={menuId(title)}
-    >
+    <MenuArticle id={menuId(title)}>
       <Image
         fluid={picture}
         css={css`
           margin: 1rem 0;
+          max-width: 400px;
         `}
       />
-
-      <h3
-        css={css`
-          margin-bottom: 0.7rem;
-        `}
-      >
-        {title}
-      </h3>
-      <p>{text}</p>
-      <a href={linkUrl}>{linkText}</a>
-    </article>
+      <div className="menu-text">
+        <Fader direction="fadeInRight">
+        <h3
+          css={css`
+            margin-bottom: 0.7rem;
+          `}
+        >
+          {title}
+          </h3>
+          </Fader>
+        <p>{text}</p>
+        <a href={linkUrl}>{linkText}</a>
+      </div>
+    </MenuArticle>
   )
 }
 
