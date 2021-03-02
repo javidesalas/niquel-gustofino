@@ -1,9 +1,6 @@
-/** @jsx jsx */
-
 import React from "react"
 //import { Link } from "gatsby"
 //import PropTypes from "prop-types"
-import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
 
 import { colors } from './theme'
@@ -17,23 +14,23 @@ const Logo = styled.img`
   grid-column: 2;
 `
 
+const MyHeader = styled.header`
+  background-color: ${colors.black};
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  justify-items: center;
+`
+
 const Header = () => {
  
   return (
     <>
       <Menu disableAutoFocus /> 
         
-      <header
-        css={css`
-          background-color: ${colors.black};
-          padding: 0 1rem;
-          display: grid;
-          grid-template-columns: 100px auto 100px;
-          justify-items: center;
-        `}
-      >
+      <MyHeader>
         <Logo src={LogoNiquel} />
-      </header>
+      </MyHeader>
     </>
   )
 }

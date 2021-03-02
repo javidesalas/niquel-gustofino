@@ -1,6 +1,6 @@
 .embla {
   position: relative;
-  background-color: #f7f7f7;
+  /* background-color: #f7f7f7;*/
   padding: 20px;
   max-width: 100%;
   margin-left: auto;
@@ -39,23 +39,43 @@
 .embla__slide__inner {
   position: relative;
   overflow: hidden;
-  height: 500px;
+  display: flex;
+    justify-content: center;
+  align-items: center;
+  
+  aspect-ratio: 3 / 4;
 }
 
+@media (min-width: 768px) {
+  .embla__slide__inner {
+    max-height: none;
+    aspect-ratio: 1/1;
+  }
+}
+
+@media (min-width: 992px) {
+  .embla__slide__inner {
+    max-height: none;
+    aspect-ratio: 4 / 3;
+  }
+}
 .embla__slide__img {
-  position: absolute;
-  display: block;
+  /* position: absolute; 
+    left: 50%;
   top: 50%;
-  left: 50%;
+  transform: translate(-50%, -50%);
+  */
+  display: block;
   width: auto;
   min-height: 100%;
   min-width: 100%;
   max-width: none;
-  transform: translate(-50%, -50%);
+
 }
 
 .embla__button {
   outline: 0;
+  display: block;
   cursor: pointer;
   background-color: transparent;
   touch-action: manipulation;
@@ -66,8 +86,8 @@
   border: 0;
   width: 30px;
   height: 30px;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   fill: #535251;
   padding: 0;
 }

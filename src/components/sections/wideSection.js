@@ -2,14 +2,20 @@
 
 import React from 'react';
 import Image from 'gatsby-image'
-import {jsx, css} from '@emotion/core'
+import { jsx, css } from '@emotion/core'
+import styled from "@emotion/styled"
 
-import { menuId } from '../helpers/menuId';
+import { menuId } from '../../helpers/menuId';
 import Fader from './FadeInComponent'
+
+const WideSection = styled.section`
+margin-top: 15vh;
+margin-bottom: 5vh
+`
 
 const wideSection = ({picture, title, text}) => {
     return (
-      <section id={menuId(title)}>
+      <WideSection id={menuId(title)}>
         <Image
           fluid={picture}
           css={css`
@@ -29,7 +35,7 @@ const wideSection = ({picture, title, text}) => {
           </Fader>
           <p>{text}</p>
         </div>
-      </section>
+      </WideSection>
     )
 };                        
 

@@ -5,6 +5,10 @@ html {
   box-sizing: border-box;
   overflow-y: scroll;
 }
+*, *::after, *::before{
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +22,8 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-  white-space: pre-line
+  white-space: pre-line;
+  overflow: hidden;
 }
 article,
 aside,

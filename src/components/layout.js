@@ -2,32 +2,22 @@ import React from "react"
 import Helmet from "react-helmet"
 //import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
+import styled from "@emotion/styled"
 
 import { colors } from "./theme"
 import Header from "./header"
+import Footer from "./footer"
 //import "./layout.css"
+
 
 
 const Layout = props => {
   //simpler alternative to Context Api due to Gatsby compatibility issues
-  const { lang, menuItems } = props;
-  typeof window !== `undefined` && sessionStorage.setItem("lang", JSON.stringify(lang))
-  typeof window !== `undefined` && sessionStorage.setItem("menuItems", JSON.stringify(menuItems))
-
-    const isInViewport = el => {
-      const rect = el.getBoundingClientRect()
-      const vertInView =
-        rect.top <= window.innerHeight && rect.top + rect.height >= 0
-      const horInView =
-        rect.left <= window.innerWidth && rect.left + rect.width >= 0
-      return vertInView && horInView
-    }
-
-  document.querySelectorAll(".reveal").forEach(elm => {
-    isInViewport(elm)
-      ? elm.classList.add("visible")
-      : elm.classList.remove("visible")
-  })
+  const { lang, menuItems } = props
+  typeof window !== `undefined` &&
+    sessionStorage.setItem("lang", JSON.stringify(lang))
+  typeof window !== `undefined` &&
+    sessionStorage.setItem("menuItems", JSON.stringify(menuItems))
 
   return (
     <>
@@ -51,6 +41,9 @@ const Layout = props => {
             -moz-font-smoothing: antialiased;
             -o-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+
+            width: 100vw;
+            overflow-x: hidden;
           }
 
           main {
@@ -118,7 +111,6 @@ const Layout = props => {
 
           .reveal.fadeInUp {
             transform: translateY(-20);
-
           }
 
           .reveal.fadeInUp.visible {
@@ -127,7 +119,7 @@ const Layout = props => {
           }
 
           .reveal.fadeInRight {
-           transform: translateX(60px);
+            transform: translateX(60px);
           }
 
           .reveal.fadeInRight.visible {
@@ -136,7 +128,7 @@ const Layout = props => {
           }
 
           .reveal.fadeInLeft {
-           transform: translateX(-60px);
+            transform: translateX(-60px);
           }
 
           .reveal.fadeInLeft.visible {
@@ -145,7 +137,6 @@ const Layout = props => {
           }
 
           .reveal.fadeIn {
-  
           }
 
           .reveal.fadeIn.visible {
@@ -168,16 +159,8 @@ const Layout = props => {
       <Header />
 
       <main>{props.children}</main>
-
-      <footer
-        style={{
-          marginTop: `2rem`,
-        }}
-      >
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-      </footer>
+<Footer />
+ 
     </>
   )
 }

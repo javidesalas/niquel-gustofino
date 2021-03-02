@@ -5,14 +5,15 @@ import Image from "gatsby-image"
 import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
 
-import { menuId } from "../helpers/menuId"
+import { menuId } from "../../helpers/menuId"
 import Fader from "./FadeInComponent"
 
 const MenuArticle = styled.article`
   max-width: 400px;
+
   @media (min-width: 992px) {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 5vh auto;
     display: flex;
     flex-wrap: nowrap;
    
@@ -24,7 +25,8 @@ const MenuArticle = styled.article`
     .menu-text {
       width: 400px;
       height: 300px;
-      margin: 1rem 1rem 0 2rem
+      margin: 1rem 1rem 0 2rem;
+     
       
     }
   }

@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import styled from "@emotion/styled"
 
 import MapContainer from "./MapContainer"
-import { menuId } from "../helpers/menuId"
+import { menuId } from "../../helpers/menuId"
 
 const Section = styled.section`
   display: flex;

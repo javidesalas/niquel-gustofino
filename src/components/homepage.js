@@ -5,10 +5,10 @@ import Image from "gatsby-image"
 import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
 
-import Contact from "./contact"
-import WideSection from "./wideSection"
-import MenuSection from "./menuSection"
-import Gallery from "./gallery"
+import Contact from "./contact/contact"
+import WideSection from "./sections/wideSection"
+import MenuSection from "./sections/menuSection"
+import Gallery from "./gallery/gallery"
 
 const Section = styled.section`
   display: flex;

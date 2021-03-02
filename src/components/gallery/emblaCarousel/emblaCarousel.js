@@ -35,7 +35,7 @@ const EmblaCarousel = ({ gallery }) => {
                 <div className="embla__slide__inner">
                   <Image
                     className="embla__slide__img"
-                    fixed={picture.fixed}
+                    fluid={picture.fluid}
                     alt="Platos"
                   />
                 </div>

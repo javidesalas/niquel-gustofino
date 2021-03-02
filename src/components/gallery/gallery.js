@@ -3,8 +3,8 @@ import React from "react"
 import { jsx, css } from "@emotion/core"
 
 import EmblaCarousel from "./emblaCarousel/emblaCarousel"
-import { menuId } from "../helpers/menuId"
-import Fader from "./FadeInComponent"
+import { menuId } from "../../helpers/menuId"
+import Fader from "../sections/FadeInComponent"
 
 const Gallery = ({ title, gallery }) => {
   return (
@@ -16,7 +16,7 @@ const Gallery = ({ title, gallery }) => {
           margin: 0 auto;
         `}
       >
-        <Fader direction="fadeInRight">
+        <Fader direction="fadeInLeft">
           <h2>{title}</h2>
         </Fader>
         <EmblaCarousel gallery={gallery} />
