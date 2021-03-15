@@ -6,7 +6,7 @@ import { Global, css } from "@emotion/core"
 
 import { colors } from "./theme"
 import Header from "./header"
-import Footer from "./footer"
+import Footer from "./Footer"
 //import "./layout.css"
 
 const Layout = props => {
