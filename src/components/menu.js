@@ -1,16 +1,16 @@
-/** @jsx jsx */
+
 
 import React from "react"
 import Menu from "react-burger-menu/lib/menus/slide"
 import {Link} from "gatsby"
 import styled from "@emotion/styled"
-import {jsx, css} from "@emotion/core"
+
 
 import { styles } from "./menuStyles"
-import { colors } from "./theme"
+//import { colors } from "./theme"
 
 import LogoNiquel from "../images/logoNiquel.svg"
-import anzueloClavel from "../images/anzueloClavel.svg"
+//import anzueloClavel from "../images/anzueloClavel.svg"
 import { menuId } from "../helpers/menuId"
 
 

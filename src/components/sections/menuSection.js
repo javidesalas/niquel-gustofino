@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React from "react"
+//import React from "react"
 import Image from "gatsby-image"
 import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"

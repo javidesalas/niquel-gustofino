@@ -1,6 +1,4 @@
 import React from "react"
-//import { Link } from "gatsby"
-//import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 
 import { colors } from './theme'

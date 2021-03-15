@@ -2,14 +2,12 @@ import React from "react"
 import Helmet from "react-helmet"
 //import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
-import styled from "@emotion/styled"
+//import styled from "@emotion/styled"
 
 import { colors } from "./theme"
 import Header from "./header"
 import Footer from "./footer"
 //import "./layout.css"
-
-
 
 const Layout = props => {
   //simpler alternative to Context Api due to Gatsby compatibility issues
@@ -44,6 +42,7 @@ const Layout = props => {
 
             width: 100vw;
             overflow-x: hidden;
+            white-space: pre-line;
           }
 
           main {
@@ -159,8 +158,7 @@ const Layout = props => {
       <Header />
 
       <main>{props.children}</main>
-<Footer />
- 
+      <Footer />
     </>
   )
 }

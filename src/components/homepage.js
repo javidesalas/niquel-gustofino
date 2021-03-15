@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React from "react"
+//import React from "react"
 import Image from "gatsby-image"
 import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
@@ -9,6 +9,7 @@ import Contact from "./contact/contact"
 import WideSection from "./sections/wideSection"
 import MenuSection from "./sections/menuSection"
 import Gallery from "./gallery/gallery"
+import Social from "./social/Social"
 
 const Section = styled.section`
   display: flex;
@@ -56,6 +57,8 @@ function homepage(props) {
           max-height: 300px;
         `}
       />
+
+      <Social />
 
       <Contact
         picHeaderSet={picHeader.fluid.srcSet}

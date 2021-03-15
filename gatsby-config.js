@@ -14,9 +14,9 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-datocms",
+      resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: "96c3235352c96fea94db7bcdc16a40",
+        apiToken: `96c3235352c96fea94db7bcdc16a40`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -33,12 +33,11 @@ module.exports = {
         icon: `src/images/niquel-favicon2.png`, // This path is relative to the root of the site.
       },
     },
-
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /images\/..svg$/,
+          include: /svgs/,
         },
       },
     },

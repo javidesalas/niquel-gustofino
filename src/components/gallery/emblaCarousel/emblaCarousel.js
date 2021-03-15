@@ -6,7 +6,6 @@ import Image from "gatsby-image"
 import "./embla.css"
 
 const EmblaCarousel = ({ gallery }) => {
-  
   const [viewportRef, embla] = useEmblaCarousel({ loop: true })
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
