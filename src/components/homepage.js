@@ -17,10 +17,7 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-    
 `
-
-
 
 function homepage(props) {
   const {
