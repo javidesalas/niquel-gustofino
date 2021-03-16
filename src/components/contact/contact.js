@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from "react-helmet"
 import styled from "@emotion/styled"
 
-import MapContainer from "./MapContainer"
+import MapContainer from "./MapContainer2"
 import { menuId } from "../../helpers/menuId"
 
 const Section = styled.section`
@@ -11,22 +11,21 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  
 `
 const MapDiv = styled.div`
-  width: 80%;
+  width: 80vw;
   max-width: 600px;
   min-height: 300px;
   position: relative;
   margin: 1rem 0;
+  overflow: hidden;
 `
 
 const CenteredP = styled.p`
-  text-align: center
+  text-align: center;
 `
 
 const Contacto = ({ title, telefono, horario, picHeaderSet }) => {
-  
   const structuredData = `{
       "@context": "https://schema.org",
       "@type": "Restaurant",

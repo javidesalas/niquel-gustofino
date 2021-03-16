@@ -5,7 +5,6 @@ import { colors } from "../theme"
 import InstagramLogo from "../../images/svgs/instagram-logo.svg"
 import FacebookLogo from "../../images/svgs/facebook.svg"
 
-
 const iconStyles = {
   width: "30px",
   height: "auto",
@@ -21,7 +20,6 @@ const SocialLink = styled.a`
 `
 
 const MyMediaDiv = styled.div`
-  
   margin: 1rem;
   padding: 0 1rem;
   display: flex;
@@ -40,10 +38,18 @@ const Header = () => {
     <>
       <MyMediaDiv>
         <MyMedia>
-          <SocialLink href="#">
+          <SocialLink
+            href="https://instagram.com/niquel_gustofino"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <InstagramLogo style={iconStyles} />
           </SocialLink>
-          <SocialLink href="#">
+          <SocialLink
+            href="https://www.facebook.com/N%C3%ADquel_Gusto-Fino-111029301040334"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FacebookLogo style={iconStyles} />
           </SocialLink>
         </MyMedia>

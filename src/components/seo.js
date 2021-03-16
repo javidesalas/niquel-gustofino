@@ -34,7 +34,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | Gusto Fino` : null}
       meta={[
         {
           name: `description`,
@@ -74,9 +74,9 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `es`,
   meta: [],
-  description: ``,
+  description: `Gusto fino en el Mercado de Ibiza. Tapeo castizo, cervezas, vinos, vermut.`,
 }
 
 SEO.propTypes = {
