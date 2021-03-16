@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Map, Marker, GoogleApiWrapper } from "google-maps-react"
 //import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api"
 
 // const center = {
@@ -18,7 +18,6 @@ import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 //   })
 
 //   const [map, setMap] = React.useState(null)
-
 
 //   const onLoad = React.useCallback(function callback(map) {
 //     const bounds = new window.google.maps.LatLngBounds()
@@ -55,34 +54,29 @@ import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 // export default React.memo(MyComponent)
 
 export class MapContainer extends Component {
-
-    constructor() {
-        super()
-        this.state = {
-            storeName : "",
-            center : {},
-
-        }
-
+  constructor() {
+    super()
+    this.state = {
+      storeName: "",
+      center: {},
     }
+  }
 
-    componentDidMount = () => {
+  componentDidMount = () => {
+    this.props.location && this.setStoreLocation()
+  }
 
-        this.props.location && this.setStoreLocation()
-
-    }
-
-    setStoreLocation = () =>{
-
-        this.setState({storeName : this.props.storeName,
-                        center: {
-                            lat: this.props.location[1],
-                            lng: this.props.location[0]
-                        }})
-    }
+  setStoreLocation = () => {
+    this.setState({
+      storeName: this.props.storeName,
+      center: {
+        lat: this.props.location[1],
+        lng: this.props.location[0],
+      },
+    })
+  }
 
   render() {
-
     const style = {
       width: this.props.style.width,
       height: this.props.style.height,
@@ -121,5 +115,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyADdi43fqJ7h82e5Jet-xIoOMIn2vzfJ84",
+  apiKey: process.env.GATSBY_REACT_APP_GOOGLE_MAPS_API,
 })(MapContainer)

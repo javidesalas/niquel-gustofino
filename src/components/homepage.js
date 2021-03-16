@@ -10,6 +10,8 @@ import WideSection from "./sections/wideSection"
 import MenuSection from "./sections/menuSection"
 import Gallery from "./gallery/gallery"
 import Social from "./social/Social"
+import menuDrink from "../images/cartabebida.pdf"
+import menuEat from "../images/cartacomida.pdf" 
 
 const Section = styled.section`
   display: flex;
@@ -72,14 +74,14 @@ function homepage(props) {
           title={subtComer}
           text={comer}
           linkText={linktextComer}
-          linkUrl={comerCarta}
+          linkUrl={menuEat}
         />
         <MenuSection
           picture={picBeber.fluid}
           title={subtBeber}
           text={beber}
           linkText={linktextBeber}
-          linkUrl={beberCarta}
+          linkUrl={menuDrink}
         />
         <MenuSection
           picture={picCelebrar.fluid}
