@@ -6,7 +6,7 @@ const App = () => (
     <h1>Google Static Maps API</h1>
 
     <GoogleStaticMap
-      apiKey={process.env.REACT_APP_GOOGLE_MAPS_API}
+      apiKey={"AIzaSyADdi43fqJ7h82e5Jet - xIoOMIn2vzfJ84"}
       latitude={32.064171}
       longitude={34.7748068}
       style={{ width: 200, height: 200 }}
