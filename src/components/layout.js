@@ -97,9 +97,9 @@ const Layout = props => {
             color: ${colors.red};
           }
 
-          .bm-item:last-child {
+          /* .bm-item:last-child {
             color: ${colors.grey};
-          }
+          } */
 
           /*Reveal effects*/
 

@@ -77,7 +77,7 @@ class Burger extends React.Component {
           </a>
         ))}
 
-        {lang === "ES" ? (
+        {/* {lang === "ES" ? (
           <Link
             to="/en/"
             key={lang}
@@ -92,8 +92,8 @@ class Burger extends React.Component {
             onClick={() => this.closeMenu()}
           >
             Español
-          </Link>
-        )}
+          </Link> 
+        )}*/}
       </Menu>
     )
   }
