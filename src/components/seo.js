@@ -53,6 +53,10 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: `https://www.datocms-assets.com/38056/1615923419-niquelshare.jpg`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
