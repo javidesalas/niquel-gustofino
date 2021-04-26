@@ -35,7 +35,7 @@ const MenuArticle = styled.article`
   }
 `
 
-const menuSection = ({ picture, title, text, linkText, linkUrl }) => {
+const menuSection = ({ picture, title, text, linkText, linkUrl, menuMediodia, setShow }) => {
   return (
     <MenuArticle id={menuId(title)}>
       <Image
@@ -59,6 +59,12 @@ const menuSection = ({ picture, title, text, linkText, linkUrl }) => {
         <a href={linkUrl} download>
           <p className="menu-link">{linkText}</p>
         </a>
+        {menuMediodia && (
+          <p className="menu-link" onClick={() => setShow(true)}>
+            {menuMediodia}{" "}
+          </p>
+        )}{" "}
+        {/*ñapa para meter link al menu del día */}
       </div>
     </MenuArticle>
   )

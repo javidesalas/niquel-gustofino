@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-//import React from "react"
+import React, {useState} from "react"
 import Image from "gatsby-image"
 import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
@@ -11,7 +11,9 @@ import MenuSection from "./sections/menuSection"
 import Gallery from "./gallery/gallery"
 import Social from "./social/Social"
 import menuDrink from "../images/cartabebida.pdf"
-import menuEat from "../images/cartacomida.pdf" 
+import menuEat from "../images/cartacomida.pdf"
+import Modal from "../components/modal/modal"
+
 
 const Section = styled.section`
   display: flex;
@@ -21,7 +23,9 @@ const Section = styled.section`
   padding: 1rem;
 `
 
-function homepage(props) {
+const Homepage = (props) => {
+  const [show, setShow] = useState(true)
+
   const {
     picHeader,
     titleContacto,
@@ -75,6 +79,8 @@ function homepage(props) {
           text={comer}
           linkText={linktextComer}
           linkUrl={menuEat}
+          menuMediodia="Menú Gusto Fino a Mediodía"
+          setShow={setShow}
         />
         <MenuSection
           picture={picBeber.fluid}
@@ -93,8 +99,9 @@ function homepage(props) {
       </Section>
 
       <Gallery title={titleGaleria} gallery={galeria} />
+      <Modal show={show} setShow={setShow}/>
     </main>
   )
 }
 
-export default homepage
+export default Homepage
