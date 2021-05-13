@@ -54,7 +54,13 @@ const Contacto = ({ title, telefono, horario, picHeaderSet }) => {
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Wednesday", "Thursday", "Friday", "Saturday"],
+          dayOfWeek: ["Wednesday"],
+          opens: "12:00",
+          closes: "18:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Thursday", "Friday", "Saturday"],
           opens: "12:00",
           closes: "00:00",
         },
