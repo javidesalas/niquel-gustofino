@@ -12,7 +12,7 @@ import Gallery from "./gallery/gallery"
 import Social from "./social/Social"
 import menuDrink from "../images/cartabebida.pdf"
 import menuEat from "../images/cartacomida.pdf"
-import Modal from "../components/modal/modal"
+//import Modal from "../components/modal/modal"
 
 
 const Section = styled.section`
@@ -99,7 +99,7 @@ const Homepage = (props) => {
       </Section>
 
       <Gallery title={titleGaleria} gallery={galeria} />
-      <Modal show={show} setShow={setShow}/>
+        {/*<Modal show={show} setShow={setShow}/>*/}
     </main>
   )
 }
