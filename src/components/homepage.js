@@ -10,8 +10,8 @@ import WideSection from "./sections/wideSection"
 import MenuSection from "./sections/menuSection"
 import Gallery from "./gallery/gallery"
 import Social from "./social/Social"
-import menuDrink from "../images/niquelbebida2022.pdf"
-import menuEat from "../images/niquelplatosinvierno2022.pdf"
+import menuDrink from "../images/Niquel_Bebida_2022.pdf"
+import menuEat from "../images/Niquel_Platos_Invierno_2022.pdf"
 //import Modal from "../components/modal/modal"
 
 const Section = styled.section`
