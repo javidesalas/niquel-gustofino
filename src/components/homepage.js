@@ -78,8 +78,6 @@ const Homepage = props => {
           text={comer}
           linkText={linktextComer}
           linkUrl={menuEat}
-          menuMediodia="Menú Gusto Fino a Mediodía"
-          setShow={setShow}
         />
         <MenuSection
           picture={picBeber.fluid}
