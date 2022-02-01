@@ -32,7 +32,7 @@ const Reservations = ({ title }) => {
           title="Reservas"
           src="https://www.covermanager.com/reserve/module_restaurant/restaurante-niquel/spanish"
           frameborder="0"
-          height="550"
+          height="650"
           width="100%"
           onload="iFrameResize();"
         ></iframe>
