@@ -13,6 +13,8 @@ const iconStyles = {
 
 const SocialLink = styled.a`
   color: ${colors.darkGrey};
+  &:visited{
+    color: ${colors.darkGrey};}
   &:hover,
   &:active {
     color: ${colors.red};
@@ -29,10 +31,14 @@ const MyMediaDiv = styled.div`
 const MyMedia = styled.nav`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 60vw;
   max-width: 400px;
 `
-
+const MyReservas = styled.h3`
+  color: ${colors.darkGrey};
+  margin-left: 10px;
+`
 const Header = () => {
   return (
     <>
@@ -51,6 +57,9 @@ const Header = () => {
             rel="noopener noreferrer"
           >
             <FacebookLogo style={iconStyles} />
+          </SocialLink>
+          <SocialLink href="#Reservas">
+            <MyReservas>Reservas</MyReservas>
           </SocialLink>
         </MyMedia>
       </MyMediaDiv>

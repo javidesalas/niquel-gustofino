@@ -10,6 +10,7 @@ import WideSection from "./sections/wideSection"
 import MenuSection from "./sections/menuSection"
 import Gallery from "./gallery/gallery"
 import Social from "./social/Social"
+import Reservations from "./reservations/Reservations"
 import menuDrink from "../images/Niquel_Bebida_2022.pdf"
 import menuEat from "../images/Niquel_Platos_Invierno_2022.pdf"
 //import Modal from "../components/modal/modal"
@@ -96,7 +97,7 @@ const Homepage = props => {
       </Section>
 
       <Gallery title={titleGaleria} gallery={galeria} />
-      {/* <Modal show={show} setShow={setShow}/> */}
+      <Reservations title="Reservas"/>
     </main>
   )
 }

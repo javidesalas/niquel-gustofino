@@ -51,27 +51,6 @@ const Contacto = ({ title, telefono, horario, picHeaderSet }) => {
       telephone: "+34659055423",
       servesCuisine: "Tapas",
       priceRange: "$$",
-      openingHoursSpecification: [
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Wednesday"],
-          opens: "12:00",
-          closes: "18:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Thursday", "Friday", "Saturday"],
-          opens: "12:00",
-          closes: "00:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Sunday",
-          opens: "12:00",
-          closes: "18:00",
-        },
-      ],
-      acceptsReservations: "False",
     }`
 
   return (
@@ -102,6 +81,8 @@ const Contacto = ({ title, telefono, horario, picHeaderSet }) => {
 
         <h4>Horario</h4>
         <CenteredP>{horario}</CenteredP>
+
+
       </Section>
     </>
   )

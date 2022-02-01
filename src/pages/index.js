@@ -17,7 +17,8 @@ const IndexPage = () => {
         content.subtComer,
         content.subtBeber,
         content.subtCelebrar,
-        content.titleGaleria,
+      content.titleGaleria,
+        "Reservas"
     ]
 
     return (
