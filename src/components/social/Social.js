@@ -39,7 +39,8 @@ const MyReservas = styled.h3`
   color: ${colors.darkGrey};
   margin-left: 10px;
 `
-const Header = () => {
+const Header = props => {
+  const lang = props.lang
   return (
     <>
       <MyMediaDiv>
@@ -58,8 +59,10 @@ const Header = () => {
           >
             <FacebookLogo style={iconStyles} />
           </SocialLink>
-          <SocialLink href="#Reservas">
-            <MyReservas>Reservas</MyReservas>
+          <SocialLink href={lang === "ES" ? "#Reservas" : "#Bookings"}>
+            <MyReservas>
+              {lang === "ES" ? "Reservas" : "Bookings"}
+            </MyReservas>
           </SocialLink>
         </MyMedia>
       </MyMediaDiv>

@@ -25,7 +25,7 @@ const CenteredP = styled.p`
   text-align: center;
 `
 
-const Contacto = ({ title, telefono, horario, picHeaderSet }) => {
+const Contacto = ({ title, telefono, horario, picHeaderSet, lang }) => {
   const structuredData = `{
       "@context": "https://schema.org",
       "@type": "Restaurant",
@@ -39,7 +39,7 @@ const Contacto = ({ title, telefono, horario, picHeaderSet }) => {
         streetAddress: "c/ Ibiza 8. Mercado de Ibiza, puesto 27",
         addressLocality: "Madrid",
         addressRegion: "Madrid",
-        postalCode: "28004",
+        postalCode: "28009",
         addressCountry: "ES",
       },
       geo: {
@@ -79,10 +79,8 @@ const Contacto = ({ title, telefono, horario, picHeaderSet }) => {
           </a>
         </CenteredP>
 
-        <h4>Horario</h4>
+        <h4>{lang === "ES" ? "Horario" : "Opening Hours"}</h4>
         <CenteredP>{horario}</CenteredP>
-
-
       </Section>
     </>
   )

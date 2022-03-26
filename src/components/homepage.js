@@ -22,10 +22,11 @@ const Section = styled.section`
   align-items: center;
   padding: 1rem;
 `
-
+ 
 const Homepage = props => {
   const [show, setShow] = useState(true)
 
+  const lang = props.lang
   const {
     picHeader,
     titleContacto,
@@ -61,13 +62,14 @@ const Homepage = props => {
         `}
       />
 
-      <Social />
+      <Social lang={lang} />
 
       <Contact
         picHeaderSet={picHeader.fluid.srcSet}
         title={titleContacto}
         telefono={telefono}
         horario={horario}
+        lang={lang}
       />
 
       <WideSection picture={picAbout.fluid} title={titleAbout} text={about} />
@@ -97,7 +99,7 @@ const Homepage = props => {
       </Section>
 
       <Gallery title={titleGaleria} gallery={galeria} />
-      <Reservations title="Reservas"/>
+      <Reservations title={lang === "ES" ? "Reservas" : "Bookings"} />
     </main>
   )
 }

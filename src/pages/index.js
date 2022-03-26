@@ -9,7 +9,8 @@ import Homepage from "../components/homepage"
 
 
 const IndexPage = () => {
-    const content = useContent("ES")
+  const content = useContent("ES")
+  const lang = "ES"
     
     const menuItems = [
         content.titleContacto,
@@ -25,7 +26,7 @@ const IndexPage = () => {
 
       <Layout lang="ES" menuItems={menuItems}>
         <SEO title="Niquel" />
-        <Homepage content={content} />
+        <Homepage content={content} lang={lang} />
       </Layout>
 
   )
